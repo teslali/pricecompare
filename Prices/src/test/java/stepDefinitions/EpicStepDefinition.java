@@ -19,15 +19,32 @@ public class EpicStepDefinition {
 
 	}
 	
-	@Given("I want to write a step with precondition")
-	public void i_want_to_write_a_step_with_precondition () throws IOException, InterruptedException {
+	@Given("User searches for product at Migros")
+	public void user_searches_for_product_at_migros() throws IOException, InterruptedException {
 		userEpicPage.MigrosSearch();
+
+		
+	}
+	
+	@When("User searches product at Kaufland")
+	public void user_searches_product_at_kaufland() throws IOException, InterruptedException {
 		userEpicPage.KauflandSearch();
+	}
+	
+	@When ("User tries search product at Walmart")
+	public void user_tries_search_product_at_walmart() throws IOException, InterruptedException {
 		userEpicPage.WalmartSearch();
+	}
+	
+	@When ("User searches product at Amazon US")
+	public void user_searches_product_at_amazon_us() throws IOException {
 		userEpicPage.AmazonSearch();
+	}
+	
+	@Then("User gathers all prices and compare them")
+	public void user_gathers_all_prices_and_compare_them() throws IOException, InterruptedException {
 		userEpicPage.ComparePrices();
 	}
-
 	
 
 }
